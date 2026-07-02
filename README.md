@@ -144,7 +144,7 @@ using a browser or Live Server.
 
 **Live Landing Page**
 
-> Add your deployed Vercel / GitHub Pages URL here.
+> namoza-developer-assignment-git-main-faizan-hosting.vercel.app
 
 Example:
 
