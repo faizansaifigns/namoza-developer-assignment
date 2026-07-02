@@ -15,7 +15,11 @@
     /* ===========================
    RESET
 =========================== */
+#consultationForm{
 
+    scroll-margin-top:100px;
+
+}
 *{
     margin:0;
     padding:0;
@@ -41,6 +45,7 @@ body{
     width:min(1100px,90%);
     margin:auto;
 }
+
 
 /* ===========================
    HEADER
@@ -252,6 +257,33 @@ button:hover{
 .cta a:hover{
     transform:translateY(-2px);
 }
+.cta-btn{
+
+display:inline-block;
+
+padding:15px 32px;
+
+background:#fff;
+
+color:#0056D2;
+
+border-radius:8px;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.cta-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
 
 /* ===========================
    FOOTER
@@ -365,7 +397,7 @@ footer{
 
                 <div class="form-card">
 
-                    <h2>Book Your Consultation</h2>
+                    <h2>Book Your Free Consultation</h2>
 
                     <form id="consultationForm">
 
@@ -376,7 +408,10 @@ footer{
                             <input
                                 type="text"
                                 id="name"
+                                name="name"
                                 placeholder="Enter your name"
+                                autocomplete="name"
+                                aria-label="Full Name"
                                 required>
 
                         </div>
@@ -388,14 +423,19 @@ footer{
                             <input
                                 type="tel"
                                 id="phone"
+                                name="phone"
                                 placeholder="Enter your phone number"
+                                autocomplete="tel"
+                                inputmode="numeric"
+                                maxlength="10"
+                                aria-label="Phone Number"
                                 required>
 
                         </div>
 
                         <button type="submit">
 
-                            Book Consultation
+                            Book Free Consultation
 
                         </button>
 
@@ -428,7 +468,7 @@ footer{
 
                     <h3>⭐⭐⭐⭐⭐</h3>
 
-                    <p>4.8 Google Rating</p>
+                    <p>4.8★ Average Google Rating</p>
 
                 </div>
 
@@ -528,9 +568,9 @@ footer{
 
                 </p>
 
-                <a href="#consultationForm">
+                <a href="#consultationForm" class="cta-btn">
 
-                    Book Consultation
+                    Book Free Consultation
 
                 </a>
 
@@ -636,6 +676,7 @@ form.addEventListener("submit", function (event) {
     thankYouMessage.hidden = false;
 
 });
+thankYouMessage.scrollIntoView({ behavior: "smooth" });
 
     </script>
 
