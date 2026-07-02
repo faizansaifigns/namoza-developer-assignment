@@ -559,7 +559,83 @@ footer{
 
     <script>
 
-    // JavaScript will be added in Commit 3
+    // ===============================
+// Initialize dataLayer
+// ===============================
+
+window.dataLayer = window.dataLayer || [];
+
+// ===============================
+// Get Elements
+// ===============================
+
+const form = document.getElementById("consultationForm");
+const thankYouMessage = document.getElementById("thankYouMessage");
+const nameInput = document.getElementById("name");
+const phoneInput = document.getElementById("phone");
+
+// ===============================
+// Form Submit
+// ===============================
+
+form.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
+
+    // ---------------------------
+    // Validation
+    // ---------------------------
+
+    if (name.length < 3) {
+
+        alert("Please enter a valid name.");
+
+        return;
+    }
+
+    if (!/^[6-9]\d{9}$/.test(phone)) {
+
+        alert("Please enter a valid 10-digit mobile number.");
+
+        return;
+    }
+
+    // ---------------------------
+    // Push Event to dataLayer
+    // ---------------------------
+
+    window.dataLayer.push({
+
+        event: "consultation_form_submitted",
+
+        form_type: "consultation",
+
+        landing_page: "orthonow_consultation",
+
+        campaign_source: "Google Ads"
+
+    });
+
+    // ---------------------------
+    // Show in Browser Console
+    // ---------------------------
+
+    console.log("dataLayer Event Fired");
+
+    console.log(window.dataLayer);
+
+    // ---------------------------
+    // Thank You State
+    // ---------------------------
+
+    form.style.display = "none";
+
+    thankYouMessage.hidden = false;
+
+});
 
     </script>
 
